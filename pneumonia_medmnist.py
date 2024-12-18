@@ -128,8 +128,6 @@ def back_propagation(inputs, w, b, activationFunc, learningRate, epochs):
         print(str(test(test_set, w1, b1, sigmoid)) + "% \n")
     return (w,b)
 
-# with open("w_b.pkl", "rb") as f:
-#     w1,b1 = pickle.load(f)
 def create_rand_values(dimensions):
     weights= [None]
     biases = [None]
@@ -141,7 +139,10 @@ def create_rand_values(dimensions):
 #test_set 624
 #train_set 4706
 
-w1, b1 = create_rand_values([784, 300,100, 2])
+# w1, b1 = create_rand_values([784, 300,100, 2]) gen random w/b
+ 
+with open("w_b.pkl", "rb") as f:
+    w1,b1 = pickle.load(f)
 print(str(test(test_set, w1, b1, sigmoid)) + "% \n")
 w1, b1 = back_propagation(train_set, w1, b1, sigmoid, 0.01, 5)
 
