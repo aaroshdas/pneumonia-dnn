@@ -43,6 +43,12 @@ for i in range(len(train_inp)):
         for num in k:
             allNums.append(num)
     finalInput = np.zeros((784, 1))
+    #distortions
+    # for i in range(len(allNums)):
+    #        finalInput[i+1, 0] = int(allNums[i])/255
+    # for i in range(len(allNums)):
+    #        finalInput[i-1, 0] = int(allNums[i])/255
+    
     for i in range(len(allNums)):
             finalInput[i, 0] = int(allNums[i])/255
     train_set.append((finalInput,solution))
