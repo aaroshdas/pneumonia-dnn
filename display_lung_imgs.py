@@ -1,9 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
-
-
 def load_img(i, filepath):
     data = np.load(filepath)
     train_inp = data['train_images']
